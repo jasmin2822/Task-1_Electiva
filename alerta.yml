@@ -26,4 +26,4 @@ jobs:
             -H "Title: GitHub Action" \
             -H "Priority: high" \
             -H "Tags: white_check_mark,rocket" \
-            https://ntfy.sh/devops
+            https://ntfy.sh/devops-jas28
