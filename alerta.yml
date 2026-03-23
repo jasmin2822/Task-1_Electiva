@@ -1,0 +1,28 @@
+name: Notificacion de CI - DevOps ITLA
+
+# Define qué dispara la acción (un push a la rama main)
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  comunicar-ntfy:
+    runs-on: ubuntu-latest
+    steps:
+      # Paso 1: Descargar el código en el servidor de GitHub
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      # Paso 2: Ejecutar el script de Node (opcional, para validar)
+      - name: Ejecutar Hola Mundo
+        run: node index.js
+
+      # Paso 3: Enviar la petición POST a ntfy.sh
+      - name: Notificar a ntfy.sh
+        run: |
+          curl -d "Push detectado en main. Pipeline ejecutado correctamente. 🚀" \
+               -H "Title: GitHub Action - ITLA" \
+               -H "Priority: high" \
+               -H "Tags: white_check_mark,rocket" \
+               ntfy.sh/devops-itla
