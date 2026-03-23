@@ -1,4 +1,4 @@
-name: Notificacion de CI - DevOps ITLA
+name: Notificacion de CI - DevOps
 
 # Define qué dispara la acción (un push a la rama main)
 on:
