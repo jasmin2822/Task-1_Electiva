@@ -18,11 +18,12 @@ jobs:
       - name: Ejecutar Hola Mundo
         run: node index.js
 
-      # Paso 3: Enviar la petición POST a ntfy.sh
+# Paso 3: Enviar la petición POST a ntfy.sh
       - name: Notificar a ntfy.sh
         run: |
-          curl -d "Push detectado en main. Pipeline ejecutado correctamente. 🚀" \
-               -H "Title: GitHub Action - ITLA" \
-               -H "Priority: high" \
-               -H "Tags: white_check_mark,rocket" \
-               ntfy.sh/devops-itla
+          curl \
+            -d "Push detectado en main. Pipeline ejecutado correctamente. 🚀" \
+            -H "Title: GitHub Action" \
+            -H "Priority: high" \
+            -H "Tags: white_check_mark,rocket" \
+            https://ntfy.sh/devops
